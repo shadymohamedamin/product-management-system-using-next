@@ -1,0 +1,123 @@
+/*body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}*/
+body
+{
+  background-color: chocolate;
+}
+.div
+{
+  color: rgb(8, 7, 7)(10, 1, 1);
+  /*margin-left: auto;
+  margin-right: auto;*/
+  justify-content: center;
+  display: flex;
+  text-align: center;
+}
+.l1
+{
+  color: rgb(2, 1, 8);
+  font-size: 60px;
+}
+.l2
+{
+  color: rgb(12, 2, 11);
+  font-size: 40px;
+}
+.p_title,.p_count,.p_category,.p_search
+{
+  width: 1050px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: hsl(318, 79%, 26%);
+}
+.p_price,.p_taxes,.p_ads,.p_discount
+{
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: hsl(318, 79%, 26%);
+}
+.p_title::placeholder,.p_price::placeholder,.p_taxes::placeholder,.p_ads::placeholder,.p_discount::placeholder,.p_count::placeholder,.p_category::placeholder,.p_search::placeholder
+{
+  font-size: 30px;
+}
+input
+{
+  font-size: 30px;
+}
+.p_total1
+{
+  /*border-width: 60px;
+  border-style:solid; 
+  border-color:#FF0000;*/
+  font-size: 40px;
+}
+.p_total2
+{
+  /*width: 2000px;
+  height: 10px;*/
+  font-size: 40px;
+  background-color: rgb(240, 235, 235);
+  /*color: rgb(104, 9, 9);
+  border-width: 60px;
+  border-style:solid; 
+  border-color:#f1eded;*/
+}
+.btn
+{
+  width: 1060px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: hwb(318 5% 53%);
+  font-size: 40px;
+  background-color: aqua;
+}
+.btn1,.btn2
+{
+  width: 530px;
+  height: 50px;
+  border-radius: 10px;
+  border-color: hwb(318 5% 53%);
+  font-size: 30px;
+  background-color: aqua;
+}
+.h
+{
+  font-size: 20px;
+  width: 70px;
+  padding: 10px;
+  margin: 10px;
+  color: aqua;
+  border-radius: 10px;
+  background-color: rgb(1, 0, 3);
+}
+.div2
+{
+  color: rgb(8, 7, 7)(10, 1, 1);
+  /*margin-left: auto;
+  margin-right: auto;*/
+  padding: 20px;
+  margin: 20px;
+  justify-content: center;
+  display: flex;
+  text-align: center;
+  height: 200px;
+  overflow: scroll;
+  /*width: auto;*/
+}
+.bt
+{
+  font-size: 20px;
+  border-radius: 10px;
+}
+#in_total
+{
+  width: 120px;
+  font-size: 35px;
+}

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <title>{{title}}</title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body>
+
+    
+    
+    <!--
+    <form action="/tit" method="post">
+       <input type="hidden" name="input" value="value">
+       <input type="file">
+       <button type="submit" value="shady" name="btn1">hey</button>
+    </form>
+    -->
+    
+    
+    
+
+    <div class="div">
+      <table>
+        <form action="/insert" method="post" id="form">
+        <tr>
+          <td colspan="20">
+            <label class="l1">cruds</label>
+             <br>
+            <label class="l2">create read update delete search</label>
+          </td>  
+        </tr> 
+
+        <tr class="r1">
+          <td colspan="20">
+            <input class="p_title" placeholder="title" id="title" name="title">
+          </td>
+        </tr>
+
+        <tr class="r2">
+          
+          <td colspan="4">
+            <input class="p_price" placeholder="price" name="price" id="price">
+          </td>
+          <td colspan="4">
+            <input class="p_taxes" placeholder="taxes" name="taxes" id="taxes">
+          </td>
+          <td colspan="4">
+            <input class="p_ads" placeholder="ads" name="ads" id="ads">
+          </td>
+          <td colspan="4">
+            <input class="p_discount" placeholder="discount" name="discount" id="discount">
+          </td>
+          <td colspan="4">
+            <span class="p_total1">total:</span>
+            <input type="text" id="in_total" name="total">
+            
+          </td>
+        </tr>
+
+        <tr class="r4">
+          <td colspan="20">
+            <input class="p_count" placeholder="count" name="count" id="count">
+          </td>
+        </tr>
+
+        <tr class="r5">
+          <td colspan="20">
+            <input class="p_category" placeholder="category" name="category" id="category">
+          </td>
+        </tr>
+
+        <tr class="r6">
+          <td colspan="20">
+            <button id="submit" class="btn" type="submit" name="shady" value="">Create</button>
+          </td>
+        </tr>
+        
+        </form>
+        
+        <form action="/title" method="post" id="form_search">
+
+          <tr class="r7">
+            <td colspan="20">
+              <input class="p_search" placeholder="search" id="search" name="sear">
+            </td>
+          </tr>
+
+          <tr class="r8">
+            <td colspan="10">
+              <button type="submit" class="btn1" value="title" id="titl">Search by title</button>
+            </td>
+            <td colspan="10">
+              <button type="submit" class="btn2" value="category" id="category1">Search by category</button>
+            </td>
+          </tr>
+        
+        </form>
+        
+
+        
+        <tr class="r9">
+          <form action="/" method="get">
+            <td colspan="10">
+              <button class="btn1">Show All</button>
+            </td>
+          </form>  
+
+          <form action="/deleteAll" method="post"></form>
+            <td colspan="10">
+              <button class="btn1">Delete All</button>
+            </td>
+          </form>
+
+          
+
+        </tr>
+        
+        
+        <!--<form action="/" method="get">
+        <tr class="r10">
+          <td colspan="10">
+            <button class="btn">Show All</button>
+          </td>
+        </tr>
+        </form>-->
+
+      </table>
+    </div>
+
+    <div class="div2">
+      <table>
+        <tr class="r10">
+
+          <th colspan="2">
+            <span class="h">ID</span>
+          </th>
+
+          <th colspan="2">
+            <span class="h">TITLE</span>
+          </th>
+          
+          <th colspan="2">
+            <span class="h">PRICE</span>
+          </th>
+          
+          <th colspan="2">
+            <span class="h">TAXES</span>
+          </th>
+          
+          <th colspan="2">
+            <span class="h">ADS</span>
+          </th>
+          
+          <th colspan="2">
+            <span class="h">DISCOUNT</span>
+          </th>
+
+          <th colspan="2">
+            <span class="h">TOTAL</span>
+          </th>
+          
+          <th colspan="1">
+            <span class="h">COUNT</span>
+          </th>
+
+          <th colspan="1">
+            <span class="h">CATEGORY</span>
+          </th>
+          
+          <th colspan="2">
+            <span class="h">UPDATE</span>
+          </th>
+          
+          <th colspan="2">
+            <span class="h">DELETE</span>
+          </th>
+
+        </tr>
+        
+        <!--<input id="prod" type="hidden" value={{prod}}>-->
+        {{#each prod}}
+          <!--<input type="text" id="title" value={{this.title}}>-->
+          <script>
+            //var prodd=document.getElementById("prodd");
+            //document.getElementById("title").setAttribute("value",`{{this.title}}`);//
+            var title=document.getElementById("title");
+            var price=document.getElementById("price");
+            var taxes=document.getElementById("taxes");
+            var ads=document.getElementById("ads");
+            var discount=document.getElementById("discount");
+            var in_total=document.getElementById("in_total");
+            var count=document.getElementById("count");
+            var category=document.getElementById("category");
+            title.setAttribute("value",`{{this.title}}`);
+            price.setAttribute("value",`{{this.price}}`);
+            taxes.setAttribute("value",`{{this.taxes}}`);
+            ads.setAttribute("value",`{{this.ads}}`);
+            discount.setAttribute("value",`{{this.discount}}`);
+            in_total.setAttribute("value",`{{this.total}}`);
+            count.setAttribute("value",`{{this.count}}`);
+            category.setAttribute("value",`{{this.category}}`);
+            document.getElementById("form").setAttribute("action","/update");
+            document.getElementById("submit").innerHTML="Update";
+            document.getElementById("submit").value=`{{this._id}}`;
+            //prodd.setAttribute("value",{{this.price}});
+          </script>
+        {{/each}}
+        
+
+        {{#each items as |item index|}}
+          <tr>
+            <td colspan="2" style="font-size: 25px;padding:10px;">{{index}}</td>
+            <td colspan="2" style="font-size: 25px;padding:10px;">{{this.title}}</td>
+            <td colspan="2" style="font-size: 25px;padding:10px;">{{this.price}}</td>
+            <td colspan="2" style="font-size: 25px;padding:10px;">{{this.taxes}}</td>
+            <td colspan="2" style="font-size: 25px;padding:10px;">{{this.ads}}</td>
+            <td colspan="2" style="font-size: 25px;padding:10px;">{{this.discount}}</td>
+            <td colspan="2" style="font-size: 25px;padding:10px;">{{this.total}}</td>
+            <td colspan="1" style="font-size: 25px;padding:10px;">{{this.count}}</td>
+            <td colspan="1" style="font-size: 25px;padding:10px;">{{this.category}}</td>
+            
+
+            <td colspan="2" style="font-size: 25px;padding:10px;color:aqua"><form action="/find" method="post"><button type="submit" class="bt" id="update_btn" name="update" value={{this._id}}>update</button></form></td>
+            <td colspan="2" style="font-size: 25px;padding:10px;color:aqua"><form action="/delete" method="post"><button type="submit" class="bt" id="delete_btn" name="delete" value={{this._id}}>delete</button></form></td>
+            
+          </tr>
+        {{/each}}
+      </table>
+    </div>
+
+
+    
+   <!--
+    {{#each items as |item index|}}
+    <div>
+        count  {{index}}
+    </div>
+    <div>
+        id  {{this._id}}
+    </div>
+    <div>
+        username  {{this.username}}
+    </div>
+    <div>
+        usermail  {{this.usermail}}
+    </div>
+    
+    {{/each}}
+
+    
+    
+    <form action="/insert" method="post">
+    <p>user name</p>
+    <input type="text" name="username">
+    <p>email</p>
+    <input type="email" name="usermail">
+    
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+    
+    </form>
+
+
+    <br>
+    <br>
+
+    <form action="/user" method="get">
+    
+    <button type="submit">get user</button>
+    
+    </form>
+
+    
+    <br>
+    <br>
+    
+
+    <form action="/update" method="post">
+    <p>id</p>
+    <input type="text" name="id">
+    <p>user name</p>
+    <input type="text" name="username">
+    <p>email</p>
+    <input type="email" name="usermail">
+    
+    <br>
+    <br>
+    <button type="submit">update</button>
+    
+    </form>
+
+
+
+    <br>
+    <br>
+
+    <form action="/delete" method="post">
+    <input type="text" name="id">
+    <button type="submit">delete</button>
+    
+    </form>
+  
+     
+    -->
+    
+    <script type="text/javascript" src="/javascripts/js.js"></script>
+  </body>
+</html>
